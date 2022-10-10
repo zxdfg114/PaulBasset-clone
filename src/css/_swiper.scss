@@ -1,0 +1,29 @@
+.swiper-button-next{
+  color: #555;
+}
+.swiper-button-prev{
+  color: #555;
+}
+
+.swiper-pagination{
+
+  &-fraction{
+ 
+  width: 100%;
+  bottom : 20%;
+  font-size: 20px;
+  font-style: italic;
+  color: #fff;
+  text-align: right;
+  padding-right: 5%;
+  }
+
+  &-current {
+    font-size: 30px;
+  }
+}
+
+.swiper {
+  z-index: 0;
+}
+

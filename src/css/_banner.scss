@@ -1,0 +1,54 @@
+.main-banner {
+  width: 100%;
+  background-color: rgb(56, 46, 44);
+  padding: 10% 5%;
+  display: flex;
+  overflow-x: visible;
+
+  &-item {
+    position: relative;
+    overflow-x: visible;
+    margin-left: 10%;
+    margin-right: 10%;
+    opacity: 0.7;
+    transition: all 0.5s;
+    
+    article {
+      position: absolute;
+      overflow-x: visible;
+      top: 10%;
+
+
+      h1 {
+        color: white;
+        font-size: 56px;
+        transform: translateX(-20%);
+        transition: all 0.6s ease-in-out;
+        white-space: nowrap;
+      }
+
+      p {
+        color: white;
+        text-align: right;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
+
+    }//article
+
+    &:hover {
+      opacity: 1;
+
+      h1 {
+        transform: translateX(0);
+      }
+
+      p {
+        transform: translateX(0);
+        text-align: right;
+        opacity: 1;
+      }
+    }
+  }
+}

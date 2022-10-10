@@ -1,0 +1,153 @@
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 5%;
+  border-bottom : 0;
+  transition: all 0.3s;
+  position: absolute;
+  z-index: 10;
+  #logo{
+    width: 130px;
+  }
+
+  &.on .user li a {
+    color: #111;
+  }
+
+  nav {
+    display: block;
+    width: 50%;
+    height: 100%;
+    
+    #gnb {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      z-index: 100;
+      
+      >li {
+        display: inline-block;
+        color: white;
+        width: 16.6666666667%;
+        line-height: 130px;
+        text-indent: 10px;
+        white-space: nowrap;
+        position: relative;
+        padding-bottom: 0px;
+
+        &::after {
+          transition: width 0.5s ease-in-out;
+          content: '';
+          width: 0%;
+        }
+        
+
+        &:hover::after {
+          position: absolute;
+          bottom: 0;
+          content: '';
+          display: block;
+          width: 95%;
+          height: 4px;
+          background-color: #EA094B;
+        }
+
+        >.sub {
+          position: absolute;
+          top: 100px;
+          left: 0;
+          width: 100%;
+          height: 300px;
+          padding: 30px 5px;
+          display: none;
+          transition: all 0.3s;
+          opacity: 0;
+          z-index: 20;
+
+
+
+          &.on {
+            display: block;
+            opacity: 1;
+          }
+          
+          >li {
+            position: relative;
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #111;
+            padding: 10px 10px;
+            border-right: 1px solid #eee;
+            text-indent: 0px;
+            z-index: 20;
+          }
+        }
+      }
+    }
+  } //nav
+
+  .user {
+    white-space: nowrap;
+    li {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #555;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .ask {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      display: inline-block;
+      line-height: 0;
+      color: rgb(98, 96, 95);
+      padding: 5px 10px;
+    }
+  }
+}
+
+.sub-wrapper {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  border-bottom: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 1;
+  
+  
+  &.on {
+    border-bottom: 1px solid #eee;
+    opacity: 1;
+
+  }
+}
+
+header.on {
+  background-color: rgba(255,255,255, 1);
+  border-bottom: 1px solid #eee;
+  #gnb {
+    li {
+      color: #111;
+    }
+  }
+}
+
+
+
+
+
