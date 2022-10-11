@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import SubBG from "../components/SubBG";
 
 export default function SubEvent() {
+  const bg = "../image/eventSubVisual.jpg"
+  const title = "EVENT/NEWS"
+
   let { id } = useParams();
 
   let eventList = [
@@ -33,7 +36,7 @@ export default function SubEvent() {
 
   return (
     <>
-      <SubBG></SubBG>
+      <SubBG bg={bg} title={title}></SubBG>
       <div className="sub-wrap">
         <p>{select[0].title}</p>
         <figure>

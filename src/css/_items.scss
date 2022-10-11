@@ -1,0 +1,40 @@
+.sortitems {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    margin-bottom: 0;
+    padding : 10px 0;
+    
+    li {
+      display: inline-block;
+      padding: 0 40px;
+      font-size: 18px;
+      text-align: center;
+      margin: 0px 10px;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        width: 0%;
+        display: block;
+        height: 2px;
+        background-color: transparent;
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        color : #EA094B;
+      }
+      
+      &:hover::after {
+        background-color : #EA094B;
+        width: 100%;
+      }
+    }
+  }
+}

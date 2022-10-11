@@ -50,7 +50,7 @@ export default function Header() {
                 setOn("on");
               }}
             >
-              MENU
+              <Link to ={'/Items'}>MENU</Link>
               <ul
                 className={`sub ${on}`}
                 onMouseLeave={() => {

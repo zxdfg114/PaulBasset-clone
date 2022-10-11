@@ -11,8 +11,9 @@ import Hero from "./components/Main";
 import MainBanner from "./components/MainBanner";
 import SubEvent from "./routes/event";
 import LogIn from "./routes/Login";
-import "./css/style.min.css";
 import FindStore from "./routes/FindStore";
+import Items from "./routes/Items";
+import "./css/style.min.css";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="event/:id" element={<SubEvent></SubEvent>}></Route>
           <Route path={"/Login"} element={<LogIn />} />
           <Route path={"/find"} element={<FindStore />} />
+          <Route path={"/Items"} element={<Items />} />
           <Route
             path={"*"}
             element={

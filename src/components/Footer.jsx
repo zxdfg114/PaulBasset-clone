@@ -24,8 +24,8 @@ export default function Footer () {
       </div>
       <ul className="social">
         <li>
-        <i className="fa fa-facebook"></i></li>
-        <li><i className="fa fa-instagram"></i></li>
+        <a href={'https://www.facebook.com/paulbassettkorea/'}><i className="fa fa-facebook"></i></a></li>
+        <li><a href={'https://www.instagram.com/paulbassettkorea/'}><i className="fa fa-instagram"></i></a></li>
       </ul>
     </footer>
   )
