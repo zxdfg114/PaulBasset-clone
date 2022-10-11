@@ -22,7 +22,7 @@
         content: '';
         width: 0%;
         display: block;
-        height: 2px;
+        height: 4px;
         background-color: transparent;
         transition: all 0.5s;
       }
@@ -36,5 +36,27 @@
         width: 100%;
       }
     }
+  }
+}
+
+.card {
+  cursor: pointer;
+
+  .card-title {
+    font-weight: bold;
+  }
+}
+
+.cate {
+  position: absolute;
+  top: 1rem;
+  padding: 8px 16px;
+  color: white;
+  background-color: #EA094B;
+  opacity: 0.5;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.8;
   }
 }

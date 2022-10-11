@@ -13,6 +13,7 @@ import SubEvent from "./routes/event";
 import LogIn from "./routes/Login";
 import FindStore from "./routes/FindStore";
 import Items from "./routes/Items";
+import Detail from "./routes/Detail";
 import "./css/style.min.css";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path={"/Login"} element={<LogIn />} />
           <Route path={"/find"} element={<FindStore />} />
           <Route path={"/Items"} element={<Items />} />
+          <Route path={"/detail/:id"} element={<Detail />} />
           <Route
             path={"*"}
             element={

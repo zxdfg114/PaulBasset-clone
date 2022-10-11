@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
+
+import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import Card from 'react-bootstrap/Card';
 import SubBG from "../components/SubBG";
 import itemsData from "../data/items";
@@ -10,6 +11,8 @@ import itemsData from "../data/items";
 export default function Items() {
   const bg = "../image/subVisual_new.jpg"
   const title = "NEW"
+
+  const navigate = useNavigate();
 
   let [data, setData] = useState(itemsData)
 
@@ -22,16 +25,19 @@ export default function Items() {
       <ul>
         <li onClick={()=>{
           setData(itemsData)
-        }}>전체</li>
+        }}>ALL</li>
         <li onClick={()=>{
           setData(itemsData.filter((x)=>x.category === 'food'))
         }}>Food</li>
         <li onClick={()=>{
           setData(itemsData.filter((x)=>x.category === 'beverage'))
-        }}>beverage</li>
+        }}>Beverage</li>
         <li onClick={()=>{
           setData(itemsData.filter((x)=>x.category === 'product'))
         }}>Product</li>
+        <li onClick={()=>{
+          setData(itemsData.filter((x)=>x.category === 'ice'))
+        }}>ICE</li>
       </ul>
     </div>
     <Container fluid="lg">
@@ -39,8 +45,11 @@ export default function Items() {
     {
       data.map((a, i)=>{
         return (
-          <Card style={{ width: '28rem', margin : '1rem' }} key={i}>
-          <Card.Img variant="top" src={data[i].src} />
+          <Card onClick={()=>{navigate(`/detail/${data[i].id}`)}} style={{ width: '28rem', margin : '1rem' }} key={i} >
+          <Card.Img variant="top" src={data[i].src} style={{marginTop : '1rem'}}/>
+          <div className="cate">
+            {data[i].category}
+          </div>
           <Card.Body>
             <Card.Title>{data[i].name}</Card.Title>
             <Card.Text>

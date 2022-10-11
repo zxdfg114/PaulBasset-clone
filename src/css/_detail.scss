@@ -1,0 +1,29 @@
+.detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5% 0;
+
+  article {
+    text-align: center;
+  }
+
+  .tolist {
+    padding: 20px 40px;
+    font-size: 24px;
+    color: white;
+    background-color: tan;
+    cursor: pointer;
+    margin-top: 2%; 
+    border-radius: 10px;
+    opacity: 0.5;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
