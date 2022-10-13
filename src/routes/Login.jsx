@@ -2,10 +2,13 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import HeaderPlaceholder from "../components/HeaderPlaceholder";
 
 
 export default function LogIn () {
   return(
+    <>
+    <HeaderPlaceholder></HeaderPlaceholder>
     <div className="login">
     <Container>
     <Form>
@@ -27,5 +30,6 @@ export default function LogIn () {
   </Form>
   </Container>
   </div>
+  </>
   )
 }

@@ -104,6 +104,9 @@ header nav #gnb > li > .sub {
   opacity: 0;
   z-index: 20;
 }
+header nav #gnb > li > .sub:nth-last-child(1) {
+  width: 100%;
+}
 header nav #gnb > li > .sub.on {
   display: block;
   background-color: #fff;
@@ -151,6 +154,7 @@ header .ask li {
   height: 300px;
   background-color: rgba(0, 0, 0, 0.1);
   border-bottom: 0;
+  opacity: 0;
   transition: all 0.3s;
 }
 .sub-wrapper.on {
@@ -170,6 +174,13 @@ header.on #gnb li {
 }
 header.on #gnb li a {
   color: #111;
+}
+
+.header-placeholder {
+  width: 100%;
+  position: relative;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 main {
@@ -369,10 +380,6 @@ footer .social li {
   font-size: 12px;
 }
 
-.find-store iframe {
-  margin-top: 100px;
-}
-
 .login {
   width: 100%;
   height: 80vh;
@@ -474,12 +481,6 @@ footer .social li {
   opacity: 1;
 }
 
-.header-placeholder {
-  width: 100%;
-  position: relative;
-  height: 100px;
-}
-
 .map_wrap {
   position: relative;
   height: 80vh;
@@ -512,6 +513,7 @@ footer .social li {
 }
 .map_wrap #menu_wrap form input {
   width: 80%;
+  padding-left: 10%;
 }
 .map_wrap #menu_wrap form button {
   width: 20%;
@@ -541,5 +543,148 @@ footer .social li {
   font-size: 16px;
   color: crimson;
   padding: 5px;
+}
+
+.select-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+.select-wrap #selectlocation {
+  width: 20%;
+  border: 0;
+  outline: 0;
+  font-size: 1.125rem;
+}
+
+.brand-history {
+  width: 100%;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.brand-history article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.brand-history article h1 {
+  margin-left: 100px;
+  font-weight: bold;
+}
+.brand-history article p {
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+.brand-history article img {
+  display: inline-block;
+}
+.brand-history ul {
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-top: 5px;
+}
+.brand-history ul li {
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 100px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+.brand-history ul li span {
+  margin: 2rem;
+  font-weight: bold;
+}
+.brand-history ul li span::before {
+  display: block;
+  content: ">>";
+  background-color: #ccc;
+  width: 200%;
+  height: 2px;
+  margin-bottom: 70px;
+}
+.brand-history .historylogo {
+  display: flex;
+  flex-direction: column;
+}
+.brand-history .historylogo section {
+  display: flex;
+  justify-content: flex-start;
+}
+.brand-history .historylogo section img {
+  width: 10%;
+  height: 100px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.brand-history .historylogo section p {
+  margin-left: 70px;
+}
+.brand-history .historylogo section p h2 {
+  font-weight: bold;
+}
+.brand-history .vlogo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+}
+.brand-history .vlogo-items {
+  width: 30%;
+  margin: 2%;
+  display: flex;
+}
+.brand-history .vlogo-items h2 {
+  font-weight: bold;
+}
+.brand-history .vlogo-items img {
+  width: 28%;
+  margin: 1%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.brand-history .pattern-color {
+  margin-left: 100px;
+}
+.brand-history .pattern-color div {
+  display: inline-block;
+  margin: 20px;
+}
+.brand-history .pattern-color div h2 {
+  font-weight: bold;
+}
+
+.principle-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.principle-title h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.principle-title span {
+  color: #997447;
+  margin: 30px 0;
+}
+.principle-title p {
+  width: 50%;
+  text-align: center;
+}
+
+.principle-slide {
+  width: 120%;
+  margin-left: -10%;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

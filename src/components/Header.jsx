@@ -32,15 +32,15 @@ export default function Header() {
               onMouseOver={() => {
                 setOn("on");
               }}
-            >
-              ABOUT US
+            ><Link to={'/Brand'}>
+              ABOUT US</Link>
               <ul
                 className={`sub ${on}`}
                 onMouseLeave={() => {
                   setOn("");
                 }}
               >
-                <li>Brand</li>
+                <li><Link to={'/Brand'}>Brand</Link></li>
                 <li>회사소개</li>
                 <li>CSR</li>
               </ul>
@@ -57,7 +57,7 @@ export default function Header() {
                   setOn("");
                 }}
               >
-                <li>New</li>
+                <li><Link to={'/items'} >New</Link></li>
                 <li>Coffee</li>
                 <li>BEVERAGE</li>
                 <li>ICE-CREAM</li>

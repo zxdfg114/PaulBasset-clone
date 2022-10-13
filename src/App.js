@@ -15,6 +15,7 @@ import FindStore from "./routes/FindStore";
 import Items from "./routes/Items";
 import Detail from "./routes/Detail";
 import "./css/style.min.css";
+import Brand from "./routes/Brand";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path={"/find"} element={<FindStore />} />
           <Route path={"/Items"} element={<Items />} />
           <Route path={"/detail/:id"} element={<Detail />} />
+          <Route path={"/Brand"} element={<Brand />} />
           <Route
             path={"*"}
             element={

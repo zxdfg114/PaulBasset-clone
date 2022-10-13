@@ -35,7 +35,7 @@ export default function Hero () {
       <div className="main main2">
         <p><i className="fa fa-bars"></i>추천메뉴</p>
         <article>
-          <h1>Tea & Pistacio</h1>
+          <h1>Tea & Pistachio</h1>
           <p>가을에 어울리는 티 & 피스타치오</p>
           <Link to={'/event/teaandPistachio'}>Detail View</Link>
         </article>
