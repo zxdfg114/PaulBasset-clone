@@ -1,3 +1,6 @@
+/**
+ * 더미데이터 만드는 클래스
+ */
 class Items {
   constructor(id, name, desc, src, category, detailSrc, detailDesc) {
     this.id = id;
@@ -9,6 +12,9 @@ class Items {
   }
 }
 
+/**
+ * 더미데이터
+ */
 const itemsData = [
   new Items(
     101,

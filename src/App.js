@@ -19,7 +19,7 @@ import "./css/style.min.css";
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header />
       <main>
         <Routes>
           <Route
@@ -31,7 +31,7 @@ function App() {
               </>
             }
           />
-          <Route path="event/:id" element={<SubEvent></SubEvent>}></Route>
+          <Route path="event/:id" element={<SubEvent></SubEvent>} />
           <Route path={"/Login"} element={<LogIn />} />
           <Route path={"/find"} element={<FindStore />} />
           <Route path={"/Items"} element={<Items />} />
@@ -46,7 +46,7 @@ function App() {
           />
         </Routes>
       </main>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

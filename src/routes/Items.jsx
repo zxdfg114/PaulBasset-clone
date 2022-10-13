@@ -14,6 +14,9 @@ export default function Items() {
 
   const navigate = useNavigate();
 
+  /**
+   * 서버에서 끌어다온 데이터라고 일단 가정
+   */
   let [data, setData] = useState(itemsData)
 
 

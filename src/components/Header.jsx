@@ -69,8 +69,8 @@ export default function Header() {
               onMouseOver={() => {
                 setOn("on");
               }}
-            >
-              STORE
+            ><Link to={'/find'}>
+              STORE</Link>
               <ul
                 className={`sub ${on}`}
                 onMouseLeave={() => {

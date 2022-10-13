@@ -32,6 +32,7 @@ export default function SubEvent() {
     },
   ];
 
+  
   const select = eventList.filter((x) => x.name === id);
 
   return (

@@ -8,6 +8,9 @@ export default function Detail () {
   let { id } = useParams();
   const bg = "../image/subVisual_new.jpg"
   const title = "NEW"
+  /**
+   * 아이디 숫자로 바꾸고, 인덱스 찾아줌
+   */
   const idx = itemsData.findIndex((a)=>a.id === parseInt(id)) 
 
   

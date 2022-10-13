@@ -7,11 +7,11 @@ import Container from 'react-bootstrap/Container';
 export default function LogIn () {
   return(
     <div className="login">
-    <Container fluid="xs">
+    <Container>
     <Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Group className="mb-3" controlId="formBasicId">
       <Form.Label>ID</Form.Label>
-      <Form.Control type="email" placeholder="아이디" />
+      <Form.Control type="id" placeholder="아이디" />
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">
