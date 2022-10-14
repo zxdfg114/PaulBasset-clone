@@ -5,7 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 export default function BrandPrinciple() {
   const slideItems = []
   for(let i = 1; i <= 10; i++) {
-    slideItems.push(`../image/principlesSlide${i}.jpg`)
+    slideItems.push("/image/principlesSlide"+i+".jpg")
   }
   console.log(slideItems)
 
@@ -24,7 +24,7 @@ export default function BrandPrinciple() {
         </p>
       </section>
       <section className="principle-slide">
-        <img src="../image/slideBg01.jpg" alt="" />
+        <img src={process.env.PUBLIC_URL + "/image/slideBg01.jpg"} alt="" />
         <Swiper
       navigation={true}
       spaceBetween={30}
@@ -42,13 +42,13 @@ export default function BrandPrinciple() {
             slideItems.map((data,i)=>{
               return(
               <SwiperSlide key={i}>
-                <img src={slideItems[i]} alt="" />
+                <img src={process.env.PUBLIC_URL+slideItems[i]} alt="" />
               </SwiperSlide>
               )  
             })
           }
         </Swiper>
-        <img src="../image/slideBg02.jpg" alt="" />
+        <img src={process.env.PUBLIC_URL + "/image/slideBg02.jpg"} alt="" />
       </section>
     </div>
   );

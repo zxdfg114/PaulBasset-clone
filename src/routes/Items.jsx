@@ -9,7 +9,7 @@ import SubBG from "../components/SubBG";
 import itemsData from "../data/items";
 
 export default function Items() {
-  const bg = "../image/subVisual_new.jpg"
+  const bg = `${process.env.PUBLIC_URL}/image/subVisual_new.jpg`
   const title = "NEW"
 
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function Items() {
       data.map((a, i)=>{
         return (
           <Card onClick={()=>{navigate(`/detail/${data[i].id}`)}} style={{ width: '28rem', margin : '1rem' }} key={i} >
-          <Card.Img variant="top" src={data[i].src} style={{marginTop : '1rem'}}/>
+          <Card.Img variant="top" src={ process.env.PUBLIC_URL + data[i].src} style={{marginTop : '1rem'}}/>
           <div className="cate">
             {data[i].category}
           </div>

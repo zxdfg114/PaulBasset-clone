@@ -24,6 +24,7 @@ function App() {
       <main>
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <>
@@ -32,7 +33,7 @@ function App() {
               </>
             }
           />
-          <Route path="event/:id" element={<SubEvent></SubEvent>} />
+          <Route path={"/event/:id"} element={<SubEvent></SubEvent>} />
           <Route path={"/Login"} element={<LogIn />} />
           <Route path={"/find"} element={<FindStore />} />
           <Route path={"/Items"} element={<Items />} />

@@ -23,7 +23,7 @@ export default function Header() {
       <header className={on}>
         <Link to={"/"}>
           <div id="logo">
-            <img src="../image/logo.png" alt="logo" />
+            <img src={process.env.PUBLIC_URL + "/image/logo.png"} alt="logo" />
           </div>
         </Link>
         <nav>

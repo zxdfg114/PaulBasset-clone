@@ -6,8 +6,9 @@ import itemsData from "../data/items";
 export default function Detail () {
   let navigate = useNavigate();
   let { id } = useParams();
-  const bg = "../image/subVisual_new.jpg"
+  const bg = `${process.env.PUBLIC_URL}/image/subVisual_new.jpg`
   const title = "NEW"
+  console.log(bg)
   /**
    * 아이디 숫자로 바꾸고, 인덱스 찾아줌
    */
@@ -23,7 +24,7 @@ export default function Detail () {
           <h1>{itemsData[idx].name}</h1>
           <p>{itemsData[idx].desc}</p>
         </article>
-        <img src={itemsData[idx].detailSrc} alt="" />
+        <img src={process.env.PUBLIC_URL + itemsData[idx].detailSrc} alt="" />
         <div className="tolist" onClick={()=>{navigate('/items')}}>
           LIST
         </div>

@@ -6,7 +6,7 @@ import BrandPrinciple from "../components/BrandPrinciple";
 
 export default function Brand() {
   let [tab, setTab] = useState(0);
-  const bg = "../image/brandSubVisual.jpg";
+  const bg = `${process.env.PUBLIC_URL}/image/brandSubVisual.jpg`;
   const title = "BRAND";
   const comp = [<BrandHistory />, <BrandPrinciple />];
 
