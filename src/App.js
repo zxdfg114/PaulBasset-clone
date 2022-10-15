@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import React, { useState, useEffect, Suspense } from "react";
+import { Route, Routes, useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,32 +22,52 @@ function App() {
     <>
       <Header />
       <main>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <Hero />
-                <MainBanner />
-              </>
-            }
-          />
-          <Route path={"/event/:id"} element={<SubEvent></SubEvent>} />
-          <Route path={"/Login"} element={<LogIn />} />
-          <Route path={"/find"} element={<FindStore />} />
-          <Route path={"/Items"} element={<Items />} />
-          <Route path={"/detail/:id"} element={<Detail />} />
-          <Route path={"/Brand"} element={<Brand />} />
-          <Route
-            path={"*"}
-            element={
-              <div className="nothing">
-                <h1>준비중입니다</h1>
-              </div>
-            }
-          />
-        </Routes>
+        <Suspense>
+          <Routes>
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/"}
+              element={
+                <>
+                  <Hero />
+                  <MainBanner />
+                </>
+              }
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/event/:id"}
+              element={<SubEvent></SubEvent>}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/Login"}
+              element={<LogIn />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/find"}
+              element={<FindStore />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/Items"}
+              element={<Items />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/detail/:id"}
+              element={<Detail />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/Brand"}
+              element={<Brand />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "*"}
+              element={
+                <div className="nothing">
+                  <h1>준비중입니다</h1>
+                </div>
+              }
+            />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>

@@ -5,6 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Mousewheel } from 's
 import { Link } from "react-router-dom";
 
 export default function MainBanner() {
+  console.log(process.env.PUBLIC_URL)
   const events = [
     {
       name: "신메뉴 크라운 추가적립 이벤트",
@@ -35,7 +36,7 @@ export default function MainBanner() {
         {events.map((data, i) => {
           return (
             <SwiperSlide key={i}>
-              <Link to ={`/event/${events[i].link}`}>
+              <Link to ={process.env.PUBLIC_URL +`/event/${events[i].link}`}>
               <div className="main-banner-item" key={i}>
                 <img src={process.env.PUBLIC_URL+events[i].ImgSrc} alt="" />
                 <article>

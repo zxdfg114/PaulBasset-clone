@@ -48,7 +48,7 @@ export default function Items() {
     {
       data.map((a, i)=>{
         return (
-          <Card onClick={()=>{navigate(`/detail/${data[i].id}`)}} style={{ width: '28rem', margin : '1rem' }} key={i} >
+          <Card onClick={()=>{navigate(process.env.PUBLIC_URL + `/detail/${data[i].id}`)}} style={{ width: '28rem', margin : '1rem' }} key={i} >
           <Card.Img variant="top" src={ process.env.PUBLIC_URL + data[i].src} style={{marginTop : '1rem'}}/>
           <div className="cate">
             {data[i].category}
