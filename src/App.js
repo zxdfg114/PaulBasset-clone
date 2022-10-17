@@ -14,8 +14,9 @@ import LogIn from "./routes/Login";
 import FindStore from "./routes/FindStore";
 import Items from "./routes/Items";
 import Detail from "./routes/Detail";
-import "./css/style.min.css";
 import Brand from "./routes/Brand";
+import SignUp from "./routes/SignUp";
+import "./css/style.min.css";
 
 function App() {
   return (
@@ -57,6 +58,10 @@ function App() {
             <Route
               path={process.env.PUBLIC_URL + "/Brand"}
               element={<Brand />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/signup"}
+              element={<SignUp />}
             />
             <Route
               path={process.env.PUBLIC_URL + "*"}

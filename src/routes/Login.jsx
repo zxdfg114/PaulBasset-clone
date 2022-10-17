@@ -3,9 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import HeaderPlaceholder from "../components/HeaderPlaceholder";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function LogIn () {
+  const navigate = useNavigate();
+
   return(
     <>
     <HeaderPlaceholder></HeaderPlaceholder>
@@ -23,9 +26,13 @@ export default function LogIn () {
     </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="로그인 정보 기억하기" />
+      <Link to = {'/signup'}>회원가입</Link>
     </Form.Group>
     <Button variant="danger" type="submit">
       로그인
+    </Button>
+    <Button variant="primary" onClick={()=>{navigate(process.env.PUBLIC_URL + '/signup')}}>
+      회원가입
     </Button>
   </Form>
   </Container>
