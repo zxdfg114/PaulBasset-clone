@@ -19,56 +19,35 @@ import SignUp from "./routes/SignUp";
 import "./css/style.min.css";
 
 function App() {
+  console.log(process.env.PUBLIC_URL);
   return (
     <>
       <Header />
       <main>
         <Suspense>
-          <Routes>
+          <Routes basename={process.env.PUBLIC_URL}>
+            <Route path={"/event/:id"} element={<SubEvent></SubEvent>} />
+            <Route path={"/Login"} element={<LogIn />} />
+            <Route path={"/find"} element={<FindStore />} />
+            <Route path={"/Items"} element={<Items />} />
+            <Route path={"/detail/:id"} element={<Detail />} />
+            <Route path={"/Brand"} element={<Brand />} />
+            <Route path={"/signup"} element={<SignUp />} />
             <Route
-              exact
-              path={process.env.PUBLIC_URL + "/"}
+              path={"/*"}
+              element={
+                <div className="nothing">
+                  <h1>준비중입니다</h1>
+                </div>
+              }
+            />
+            <Route
+              path={"/"}
               element={
                 <>
                   <Hero />
                   <MainBanner />
                 </>
-              }
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/event/:id"}
-              element={<SubEvent></SubEvent>}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/Login"}
-              element={<LogIn />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/find"}
-              element={<FindStore />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/Items"}
-              element={<Items />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/detail/:id"}
-              element={<Detail />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/Brand"}
-              element={<Brand />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/signup"}
-              element={<SignUp />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "*"}
-              element={
-                <div className="nothing">
-                  <h1>준비중입니다</h1>
-                </div>
               }
             />
           </Routes>

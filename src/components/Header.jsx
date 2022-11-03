@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <>
       <header className={on}>
-        <Link to={process.env.PUBLIC_URL + "/"}>
+        <Link to={"/"}>
           <div id="logo">
             <img src={process.env.PUBLIC_URL + "/image/logo.png"} alt="logo" />
           </div>
@@ -32,7 +32,7 @@ export default function Header() {
               onMouseOver={() => {
                 setOn("on");
               }}
-            ><Link to={process.env.PUBLIC_URL +'/Brand'}>
+            ><Link to={'/Brand'}>
               ABOUT US</Link>
               <ul
                 className={`sub ${on}`}
@@ -40,7 +40,7 @@ export default function Header() {
                   setOn("");
                 }}
               >
-                <li><Link to={process.env.PUBLIC_URL +'/Brand'}>Brand</Link></li>
+                <li><Link to={'/Brand'}>Brand</Link></li>
                 <li>회사소개</li>
                 <li>CSR</li>
               </ul>
@@ -50,14 +50,14 @@ export default function Header() {
                 setOn("on");
               }}
             >
-              <Link to ={process.env.PUBLIC_URL +'/Items'}>MENU</Link>
+              <Link to ={'/Items'}>MENU</Link>
               <ul
                 className={`sub ${on}`}
                 onMouseLeave={() => {
                   setOn("");
                 }}
               >
-                <li><Link to={process.env.PUBLIC_URL +'/items'} >New</Link></li>
+                <li><Link to={'/items'} >New</Link></li>
                 <li>Coffee</li>
                 <li>BEVERAGE</li>
                 <li>ICE-CREAM</li>
@@ -69,7 +69,7 @@ export default function Header() {
               onMouseOver={() => {
                 setOn("on");
               }}
-            ><Link to={process.env.PUBLIC_URL +'/find'}>
+            ><Link to={'/find'}>
               STORE</Link>
               <ul
                 className={`sub ${on}`}
@@ -77,7 +77,7 @@ export default function Header() {
                   setOn("");
                 }}
               >
-                <li><Link to={process.env.PUBLIC_URL +'/find'}>매장찾기</Link></li>
+                <li><Link to={'/find'}>매장찾기</Link></li>
               </ul>
             </li>
             <li
@@ -135,7 +135,7 @@ export default function Header() {
         <div className="header-right">
           <ul className="user">
             {userList.map((item, i) => {
-              return <li key={i}><Link to={process.env.PUBLIC_URL +'/Login'}>{userList[i]}</Link></li>;
+              return <li key={i}><Link to={'/Login'}>{userList[i]}</Link></li>;
             })}
           </ul>
           <ul className="ask">

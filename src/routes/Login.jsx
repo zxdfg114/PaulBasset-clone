@@ -31,7 +31,7 @@ export default function LogIn () {
     <Button variant="danger" type="submit">
       로그인
     </Button>
-    <Button variant="primary" onClick={()=>{navigate(process.env.PUBLIC_URL + '/signup')}}>
+    <Button variant="primary" onClick={()=>{navigate('/signup')}}>
       회원가입
     </Button>
   </Form>

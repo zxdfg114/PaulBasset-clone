@@ -36,7 +36,7 @@ export default function MainBanner() {
         {events.map((data, i) => {
           return (
             <SwiperSlide key={i}>
-              <Link to ={process.env.PUBLIC_URL +`/event/${events[i].link}`}>
+              <Link to ={`/event/${events[i].link}`}>
               <div className="main-banner-item" key={i}>
                 <img src={process.env.PUBLIC_URL+events[i].ImgSrc} alt="" />
                 <article>
