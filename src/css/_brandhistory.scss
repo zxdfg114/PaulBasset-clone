@@ -1,11 +1,17 @@
 .brand-history {
-  width: 100%;
-  padding: 5% 10%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+
+  section {
+    width: 100%;
+  }
 
   article {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,7 +33,7 @@
   }
 
   ul {
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -41,15 +47,13 @@
       line-height: 1.5;
       font-size: 18px;
 
-
-      
       span {
         margin: 2rem;
         font-weight: bold;
 
         &::before {
           display: block;
-          content: '>>';
+          content: ">>";
           background-color: #ccc;
           width: 200%;
           height: 2px;
@@ -59,21 +63,29 @@
     }
   }
   .historylogo {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     section {
       display: flex;
       justify-content: flex-start;
 
       img {
-        width: 10%;
+        width: 50%;
+        max-width: 200px;
         height: 100px;
         margin-left: 100px;
         margin-top: 50px;
       }
 
-      p{
+      span {
+        font-weight: bold;
+      }
+
+      p {
         margin-left: 70px;
 
         h2 {
@@ -81,16 +93,18 @@
         }
       }
     }
-  }//historylogo
+  } //historylogo
 
   .vlogo {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10%;
+    padding: 0 5%;
+    // margin-left: 100px;
 
     &-items {
-      width: 30%;
+      width: 100%;
       margin: 2%;
       display: flex;
 
@@ -105,15 +119,18 @@
         object-fit: contain;
       }
     }
-  }//vlogo
+  } //vlogo
 
   .pattern-color {
-    margin-left: 100px;
-
+    padding: 5% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20%;
+    .color {
+      margin-left: 10%;
+    }
 
     div {
-      display: inline-block;
-      margin: 20px;
       h2 {
         font-weight: bold;
       }
