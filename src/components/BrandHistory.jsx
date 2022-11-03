@@ -42,7 +42,10 @@ export default function BrandHistory() {
           <p>스페셜티 전문 브랜드 폴 바셋은 성장하고 있습니다.</p>
           <ul>
             <li>
-              <img src={process.env.PUBLIC_URL + "/image/historylogo1.png"} alt="" />
+              <img
+                src={process.env.PUBLIC_URL + "/image/historylogo1.png"}
+                alt=""
+              />
               <br></br>
               <span>2009</span>
               <br />폴 바셋 1호점
@@ -66,7 +69,10 @@ export default function BrandHistory() {
               브랜드 10주년
             </li>
             <li>
-              <img src={process.env.PUBLIC_URL + "/image/historylogo2.png"} alt="" />
+              <img
+                src={process.env.PUBLIC_URL + "/image/historylogo2.png"}
+                alt=""
+              />
               <br></br>
               <span>2020</span>
               <br />
@@ -76,10 +82,13 @@ export default function BrandHistory() {
         </article>
         <article className="historylogo">
           <h1>LOGO</h1>
-            <section>
-            <img src={process.env.PUBLIC_URL + "/image/historylogo003.png"} alt="" />
-          <p>
-              <h5>베이직 로고</h5>
+          <section>
+            <img
+              src={process.env.PUBLIC_URL + "/image/historylogo003.png"}
+              alt=""
+            />
+            <p>
+              <span>베이직 로고</span>
               <br />
               바리스타 챔피언을 상징하는 왕관(Crown)이
               <br /> 강조된 로고로, 바리스타 폴 바셋의 친필사인과 함께 <br />
@@ -87,18 +96,21 @@ export default function BrandHistory() {
               <br />
               크라운은 떨어지는 커피를 형상화한 모양으로
               <br /> 전문성을 상징하기도 합니다.
-          </p>
-            </section>
+            </p>
+          </section>
         </article>
         <section className="vlogo">
           {variantLogos.map((data, i) => {
             return (
               <div className="vlogo-items" key={i}>
                 <div>
-                <h2>{variantLogos[i].title}</h2>
-                <p>{variantLogos[i].desc}</p>
+                  <h2>{variantLogos[i].title}</h2>
+                  <p>{variantLogos[i].desc}</p>
                 </div>
-                <img src={process.env.PUBLIC_URL + variantLogos[i].src} alt="" />
+                <img
+                  src={process.env.PUBLIC_URL + variantLogos[i].src}
+                  alt=""
+                />
               </div>
             );
           })}
@@ -106,11 +118,11 @@ export default function BrandHistory() {
         <section className="pattern-color">
           <div className="pattern">
             <h2>PATTERN</h2>
-          <img src={process.env.PUBLIC_URL + "/image/pattern.png"} alt="" />
+            <img src={process.env.PUBLIC_URL + "/image/pattern.png"} alt="" />
           </div>
           <div className="color">
             <h2>COLOR</h2>
-          <img src={process.env.PUBLIC_URL + "/image/color.png"} alt="" />
+            <img src={process.env.PUBLIC_URL + "/image/color.png"} alt="" />
           </div>
         </section>
       </div>

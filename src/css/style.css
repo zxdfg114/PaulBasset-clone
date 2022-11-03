@@ -200,6 +200,7 @@ main {
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
+  padding-right: 30%;
 }
 .main p {
   color: white;
@@ -224,8 +225,17 @@ main {
 .main article a {
   color: white;
   display: block;
+  width: 30%;
   padding: 10px 20px;
   text-transform: uppercase;
+  border: 1px solid #fff;
+  text-align: center;
+  transition: all 0.3s;
+  margin-left: 20px;
+}
+.main article a:hover {
+  background-color: #fff;
+  color: #311;
 }
 
 .main2 {
@@ -242,24 +252,26 @@ main {
 }
 .main2 article a {
   color: #311;
+  border: 1px solid #311;
+}
+.main2 article a:hover {
+  background-color: #311;
+  color: #fff;
 }
 
 .main-banner {
-  width: 100%;
   background-color: rgb(56, 46, 44);
   padding: 10% 5%;
-  display: flex;
-  overflow-x: visible;
 }
 .main-banner-item {
   position: relative;
   overflow-x: visible;
-  margin-left: 10%;
-  margin-right: 10%;
   opacity: 0.7;
   transition: all 0.5s;
 }
 .main-banner-item article {
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow-x: visible;
   top: 10%;
@@ -295,12 +307,17 @@ footer {
   height: 150px;
   background-color: rgb(61, 57, 55);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 5%;
 }
 footer .footer-left {
   display: flex;
   flex-direction: column;
+}
+footer .footer-left ul {
+  padding: 0;
+  margin: 0;
 }
 footer .footer-left ul li {
   display: inline-block;
@@ -316,6 +333,12 @@ footer .social li {
   color: white;
   padding: 10px 20px;
   font-size: 30px;
+}
+footer .social li a {
+  color: #fff;
+}
+footer .social li i {
+  color: #fff;
 }
 
 .swiper-button-next {
@@ -561,13 +584,18 @@ footer .social li {
 }
 
 .brand-history {
-  width: 100%;
-  padding: 5% 10%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+.brand-history section {
+  width: 100%;
 }
 .brand-history article {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -585,7 +613,7 @@ footer .social li {
   display: inline-block;
 }
 .brand-history ul {
-  width: 70%;
+  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -612,18 +640,25 @@ footer .social li {
   margin-bottom: 70px;
 }
 .brand-history .historylogo {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .brand-history .historylogo section {
   display: flex;
   justify-content: flex-start;
 }
 .brand-history .historylogo section img {
-  width: 10%;
+  width: 50%;
+  max-width: 200px;
   height: 100px;
   margin-left: 100px;
   margin-top: 50px;
+}
+.brand-history .historylogo section span {
+  font-weight: bold;
 }
 .brand-history .historylogo section p {
   margin-left: 70px;
@@ -633,12 +668,14 @@ footer .social li {
 }
 .brand-history .vlogo {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  padding: 0 5%;
 }
 .brand-history .vlogo-items {
-  width: 30%;
+  width: 100%;
   margin: 2%;
   display: flex;
 }
@@ -653,11 +690,13 @@ footer .social li {
      object-fit: contain;
 }
 .brand-history .pattern-color {
-  margin-left: 100px;
+  padding: 5% 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20%;
 }
-.brand-history .pattern-color div {
-  display: inline-block;
-  margin: 20px;
+.brand-history .pattern-color .color {
+  margin-left: 10%;
 }
 .brand-history .pattern-color div h2 {
   font-weight: bold;
