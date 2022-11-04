@@ -17,6 +17,7 @@ import Detail from "./routes/Detail";
 import Brand from "./routes/Brand";
 import SignUp from "./routes/SignUp";
 import "./css/style.min.css";
+import MobileMain from "./components/MobileMain";
 
 function App() {
   console.log(process.env.PUBLIC_URL);
@@ -47,6 +48,7 @@ function App() {
                 <>
                   <Hero />
                   <MainBanner />
+                  <MobileMain />
                 </>
               }
             />

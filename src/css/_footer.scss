@@ -29,6 +29,9 @@ footer {
   }
 
   .social {
+    display: flex;
+    flex-wrap: nowrap;
+
     li {
       display: inline-block;
       color: white;
@@ -41,6 +44,24 @@ footer {
 
       i {
         color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  footer {
+    font-size: 12px;
+    .footer-left ul {
+      display: none;
+    }
+
+    .social {
+      display: flex;
+      flex-wrap: nowrap;
+
+      li {
+        display: inline-block;
       }
     }
   }

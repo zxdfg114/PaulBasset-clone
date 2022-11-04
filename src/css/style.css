@@ -16,7 +16,8 @@ body * {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   font-family: "Noto Sans KR", "Roboto", sans-serif;
   font-size: 14px;
 }
@@ -37,12 +38,15 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 0 5%;
   border-bottom: 0;
   transition: all 0.3s;
   position: absolute;
   z-index: 10;
+}
+header .fa-close {
+  display: none;
 }
 header #logo {
   width: 130px;
@@ -50,21 +54,30 @@ header #logo {
 header.on .user li a {
   color: #111;
 }
+header .fa-bars {
+  display: none;
+}
+header .header-right i {
+  display: none;
+}
 header nav {
+  position: absolute;
+  width: 900px;
+  left: calc(50% - 450px);
   display: block;
-  width: 50%;
   height: 100%;
+  margin: 0 auto;
 }
 header nav #gnb {
   width: 100%;
   height: 100%;
-  display: flex;
   z-index: 100;
+  padding: 0;
 }
 header nav #gnb > li {
   display: inline-block;
   color: white;
-  width: 16.6666666667%;
+  width: 150px;
   line-height: 130px;
   text-indent: 10px;
   white-space: nowrap;
@@ -75,7 +88,7 @@ header nav #gnb > li a {
   color: white;
 }
 header nav #gnb > li a:hover {
-  color: #EA094B;
+  color: #ea094b;
 }
 header nav #gnb > li::after {
   transition: width 0.5s ease-in-out;
@@ -89,7 +102,7 @@ header nav #gnb > li:hover::after {
   display: block;
   width: 95%;
   height: 4px;
-  background-color: #EA094B;
+  background-color: #ea094b;
 }
 header nav #gnb > li > .sub {
   position: absolute;
@@ -98,7 +111,7 @@ header nav #gnb > li > .sub {
   left: 0;
   width: 100%;
   height: 300px;
-  padding: 30px 5px;
+  padding: 0;
   display: none;
   transition: all 0.3s;
   opacity: 0;
@@ -120,9 +133,7 @@ header nav #gnb > li > .sub > li {
   font-size: 14px;
   line-height: 1.5;
   color: #111;
-  padding: 10px 10px;
-  border-right: 1px solid #eee;
-  text-indent: 0px;
+  padding: 10px 0px;
   z-index: 20;
 }
 header .user {
@@ -183,6 +194,99 @@ header.on #gnb li a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media screen and (max-width: 1080px) {
+  header {
+    justify-content: space-between;
+    padding: 0 2.5%;
+  }
+  header #gnb {
+    width: 750px;
+    margin-left: 10%;
+  }
+  header #gnb > li {
+    width: 125px;
+    margin: 0;
+  }
+  header .sub li {
+    font-size: 12px;
+  }
+  header .user {
+    display: none;
+  }
+  header .ask {
+    display: none;
+  }
+  header .header-right .fa-user {
+    display: block;
+    color: #fff;
+  }
+  header.on .header-right .fa-user {
+    color: #111;
+  }
+  header.on .fa-bars {
+    color: #111;
+  }
+  header #gnb {
+    padding: 0;
+  }
+  header #gnb li {
+    line-height: 0;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 780px) {
+  header {
+    background-color: #444;
+  }
+  header nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+  }
+  header nav #gnb {
+    position: fixed;
+    left: 0;
+    width: 50%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+  }
+  header nav #gnb li:nth-child(1) {
+    text-align: right;
+    width: 100%;
+  }
+  header nav #gnb .fa-close {
+    display: block;
+    color: #111;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  header nav #gnb li {
+    width: 100%;
+    color: #111;
+    line-height: 50px;
+    padding: 20px 0;
+  }
+  header .fa-bars {
+    display: block;
+    color: #fff;
+    cursor: pointer;
+  }
+  header nav #gnb > li > .sub {
+    display: none;
+  }
+  header nav #gnb > li > .sub.on {
+    display: none;
+  }
+  .sub-wrapper {
+    display: none;
+  }
+}
 main {
   width: 100%;
   position: relative;
@@ -191,15 +295,18 @@ main {
 .main {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
+  max-height: 100vh;
   background-image: url("../../public/image/mainbg0.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-position: center;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
+  padding-left: 10%;
   padding-right: 30%;
 }
 .main p {
@@ -259,6 +366,34 @@ main {
   color: #fff;
 }
 
+@media screen and (max-width: 780px) {
+  .main2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+  .main {
+    margin-top: 100px;
+    min-height: 12vh;
+    background-size: cover;
+  }
+  .main article {
+    width: 100%;
+    min-height: 200px;
+  }
+  .main article h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .main article p {
+    font-size: 14px;
+  }
+  .main article a {
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 50%;
+  }
+}
 .main-banner {
   background-color: rgb(56, 46, 44);
   padding: 10% 5%;
@@ -268,20 +403,26 @@ main {
   overflow-x: visible;
   opacity: 0.7;
   transition: all 0.5s;
+  margin: 0 5%;
+}
+.main-banner-item img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .main-banner-item article {
-  padding: 5%;
+  padding: 5% 10%;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow-x: visible;
   top: 10%;
 }
-.main-banner-item article h1 {
+.main-banner-item article h2 {
   color: white;
   font-size: 56px;
-  transform: translateX(-20%);
+  transform: translateX(0%);
   transition: all 0.6s ease-in-out;
   white-space: nowrap;
+  opacity: 0.7;
 }
 .main-banner-item article p {
   color: white;
@@ -293,8 +434,8 @@ main {
 .main-banner-item:hover {
   opacity: 1;
 }
-.main-banner-item:hover h1 {
-  transform: translateX(0);
+.main-banner-item:hover h2 {
+  opacity: 1;
 }
 .main-banner-item:hover p {
   transform: translateX(0);
@@ -302,6 +443,11 @@ main {
   opacity: 1;
 }
 
+@media screen and (max-width: 780px) {
+  .main-banner {
+    display: none;
+  }
+}
 footer {
   width: 100%;
   height: 150px;
@@ -328,6 +474,10 @@ footer .footer-left address {
   color: #fff;
   padding: 10px 20px;
 }
+footer .social {
+  display: flex;
+  flex-wrap: nowrap;
+}
 footer .social li {
   display: inline-block;
   color: white;
@@ -341,6 +491,21 @@ footer .social li i {
   color: #fff;
 }
 
+@media screen and (max-width: 780px) {
+  footer {
+    font-size: 12px;
+  }
+  footer .footer-left ul {
+    display: none;
+  }
+  footer .social {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  footer .social li {
+    display: inline-block;
+  }
+}
 .swiper-button-next {
   color: #555;
 }
@@ -394,9 +559,15 @@ footer .social li i {
   align-items: center;
   padding: 0% 10%;
 }
+.sub-wrap figure {
+  width: 70%;
+}
+.sub-wrap figure img {
+  width: 100%;
+}
 .sub-wrap p {
   padding: 20px 10%;
-  font-size: 36px;
+  font-size: 2vw;
   border-bottom: 1px solid #eee;
 }
 .sub-wrap .description {
@@ -583,6 +754,11 @@ footer .social li i {
   font-size: 1.125rem;
 }
 
+@media screen and (max-width: 780px) {
+  .map_wrap #menu_wrap {
+    width: 100%;
+  }
+}
 .brand-history {
   width: 70%;
   display: flex;
@@ -616,14 +792,13 @@ footer .social li i {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   margin-left: 100px;
   margin-top: 5px;
 }
 .brand-history ul li {
   text-align: center;
   white-space: nowrap;
-  margin-right: 100px;
+  padding-right: 5%;
   line-height: 1.5;
   font-size: 18px;
 }
@@ -725,5 +900,80 @@ footer .social li i {
   width: 120%;
   margin-left: -10%;
   display: flex;
+}
+
+.mobile {
+  background-color: #fff;
+  display: none;
+}
+.mobile .say-hi {
+  padding: 5%;
+  background-color: #fff;
+}
+.mobile .say-hi h2 {
+  margin-bottom: 2.5%;
+}
+.mobile .form {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #311;
+  background-color: #fff;
+}
+.mobile .form a {
+  padding: 5px 10px;
+  border: 1px solid #311;
+  margin-left: 10px;
+}
+.mobile .form a:hover {
+  background-color: #311;
+  color: #fff;
+}
+.mobile .mobile-menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10% 5%;
+}
+.mobile .mobile-menu .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 5%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mobile .mobile-menu .item:hover {
+  background-color: #311;
+  color: #fff;
+}
+.mobile .mobile-menu .item:hover i {
+  color: #fff;
+}
+.mobile .mobile-menu .item span {
+  font-size: 20px;
+  text-shadow: 2px 2px 3px rgb(255, 255, 255);
+}
+.mobile .mobile-menu .item i {
+  font-size: 20px;
+  color: #311;
+  margin: 5%;
+}
+.mobile .mobile-menu .item1,
+.mobile .mobile-menu .item2 {
+  border-bottom: 2px solid #311;
+}
+.mobile .mobile-menu .item1,
+.mobile .mobile-menu .item3 {
+  border-right: 2px solid #311;
+}
+
+@media screen and (max-width: 780px) {
+  .mobile {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
