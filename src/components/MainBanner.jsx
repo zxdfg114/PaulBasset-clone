@@ -38,8 +38,8 @@ export default function MainBanner() {
   return (
     <div className="main-banner">
       <Swiper
-        slidesPerView={2}
-        spaceBetween={1000}
+        slidesPerView={"auto"}
+        spaceBetween={300}
         mousewheel={true}
         modules={[Mousewheel, Pagination]}
       >

@@ -3,15 +3,12 @@
   padding: 10% 5%;
 
   &-item {
+    width: 100%;
     position: relative;
     overflow-x: visible;
     opacity: 0.7;
     transition: all 0.5s;
     margin: 0 5%;
-
-    img {
-      object-fit: contain;
-    }
 
     article {
       padding: 5% 10%;

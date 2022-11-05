@@ -56,7 +56,12 @@ export default function Header() {
         </Link>
         {nav && (
           <nav>
-            <ul id="gnb">
+            <ul
+              id="gnb"
+              onMouseLeave={() => {
+                setOn("");
+              }}
+            >
               {ww < 780 && (
                 <li>
                   <i
@@ -73,7 +78,17 @@ export default function Header() {
                   setOn("on");
                 }}
               >
-                <Link to={"/Brand"}>ABOUT US *</Link>
+                <Link
+                  to={"/Brand"}
+                  onClick={() => {
+                    if (ww < 780) {
+                      setNav(false);
+                    }
+                    setOn("");
+                  }}
+                >
+                  ABOUT US *
+                </Link>
                 <ul
                   className={`sub ${on}`}
                   onMouseLeave={() => {
@@ -81,7 +96,17 @@ export default function Header() {
                   }}
                 >
                   <li>
-                    <Link to={"/Brand"}>Brand *</Link>
+                    <Link
+                      to={"/Brand"}
+                      onClick={() => {
+                        if (ww < 780) {
+                          setNav(false);
+                        }
+                        setOn("");
+                      }}
+                    >
+                      Brand *
+                    </Link>
                   </li>
                   <li>회사소개</li>
                   <li>CSR</li>
@@ -92,7 +117,17 @@ export default function Header() {
                   setOn("on");
                 }}
               >
-                <Link to={"/Items"}>MENU *</Link>
+                <Link
+                  to={"/Items"}
+                  onClick={() => {
+                    if (ww < 780) {
+                      setNav(false);
+                    }
+                    setOn("");
+                  }}
+                >
+                  MENU *
+                </Link>
                 <ul
                   className={`sub ${on}`}
                   onMouseLeave={() => {
@@ -100,7 +135,17 @@ export default function Header() {
                   }}
                 >
                   <li>
-                    <Link to={"/items"}>New *</Link>
+                    <Link
+                      to={"/items"}
+                      onClick={() => {
+                        if (ww < 780) {
+                          setNav(false);
+                        }
+                        setOn("");
+                      }}
+                    >
+                      New *
+                    </Link>
                   </li>
                   <li>Coffee</li>
                   <li>BEVERAGE</li>
@@ -114,7 +159,17 @@ export default function Header() {
                   setOn("on");
                 }}
               >
-                <Link to={"/find"}>STORE *</Link>
+                <Link
+                  to={"/find"}
+                  onClick={() => {
+                    if (ww < 780) {
+                      setNav(false);
+                    }
+                    setOn("");
+                  }}
+                >
+                  STORE *
+                </Link>
                 <ul
                   className={`sub ${on}`}
                   onMouseLeave={() => {

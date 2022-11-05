@@ -33,24 +33,27 @@ header {
 
   nav {
     position: absolute;
-    width: 70%;
+    width: 60%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     display: block;
-    height: 100%;
+    height: 40%;
     margin: 0 auto;
 
     #gnb {
       width: 100%;
       height: 100%;
+      margin-bottom: 0;
       z-index: 100;
       padding: 0;
 
       > li {
         display: inline-block;
+        height: 100%;
         color: white;
         width: calc(100% / 6);
-        line-height: 130px;
+        padding: 10px 0;
         text-indent: 10px;
         white-space: nowrap;
         position: relative;
@@ -65,14 +68,14 @@ header {
         }
 
         &::after {
+          position: absolute;
+          bottom: 0;
           transition: width 0.5s ease-in-out;
           content: "";
           width: 0%;
         }
 
         &:hover::after {
-          position: absolute;
-          bottom: 0;
           content: "";
           display: block;
           width: 95%;
@@ -83,7 +86,7 @@ header {
         > .sub {
           position: absolute;
           background-color: rgba(0, 0, 0, 0.1);
-          top: 100px;
+          top: 41px;
           left: 0;
           width: 100%;
           height: 300px;
@@ -249,19 +252,20 @@ header.on {
       display: flex;
       top: 0;
       left: 0;
+      background-color: #fff;
       box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
       z-index: 1000;
 
       #gnb {
         position: fixed;
         left: 50%;
+        height: 50%;
         width: 50%;
         margin-left: 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         background-color: #fff;
-        box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
         z-index: 1000;
 
         li:nth-child(1) {
@@ -280,7 +284,7 @@ header.on {
         li {
           width: 100%;
           color: #111;
-          line-height: 50px;
+          height: 50%;
           padding: 20px 0;
           border-bottom: 1px solid #ddd;
         }
