@@ -62,8 +62,9 @@ header .header-right i {
 }
 header nav {
   position: absolute;
-  width: 900px;
-  left: calc(50% - 450px);
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
   height: 100%;
   margin: 0 auto;
@@ -77,7 +78,7 @@ header nav #gnb {
 header nav #gnb > li {
   display: inline-block;
   color: white;
-  width: 150px;
+  width: 16.6666666667%;
   line-height: 130px;
   text-indent: 10px;
   white-space: nowrap;
@@ -239,15 +240,18 @@ header.on #gnb li a {
     background-color: #444;
   }
   header nav {
+    width: 120%;
     position: fixed;
+    height: 100%;
     display: flex;
     top: 0;
     left: 0;
     box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+    z-index: 1000;
   }
   header nav #gnb {
     position: fixed;
-    left: 0;
+    left: 50%;
     width: 50%;
     margin-left: 0;
     display: flex;
@@ -255,10 +259,12 @@ header.on #gnb li a {
     justify-content: flex-start;
     background-color: #fff;
     box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+    z-index: 1000;
   }
   header nav #gnb li:nth-child(1) {
     text-align: right;
     width: 100%;
+    z-index: 1000;
   }
   header nav #gnb .fa-close {
     display: block;
@@ -271,6 +277,7 @@ header.on #gnb li a {
     color: #111;
     line-height: 50px;
     padding: 20px 0;
+    border-bottom: 1px solid #ddd;
   }
   header .fa-bars {
     display: block;
@@ -307,7 +314,7 @@ main {
   justify-content: space-around;
   align-items: center;
   padding-left: 10%;
-  padding-right: 30%;
+  padding-right: 50%;
 }
 .main p {
   color: white;
