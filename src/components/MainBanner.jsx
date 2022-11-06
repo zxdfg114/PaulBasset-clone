@@ -39,13 +39,13 @@ export default function MainBanner() {
     <div className="main-banner">
       <Swiper
         slidesPerView={"auto"}
-        spaceBetween={300}
+        navigation={true}
         mousewheel={true}
-        modules={[Mousewheel, Pagination]}
+        modules={[Mousewheel, Navigation, Pagination]}
       >
         {events.map((data, i) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide style={{ width: "50%", minWidth: "700px" }} key={i}>
               <Link to={`/event/${events[i].link}`}>
                 <div className="main-banner-item" key={i}>
                   <img src={process.env.PUBLIC_URL + events[i].ImgSrc} alt="" />

@@ -406,23 +406,38 @@ main {
   }
 }
 .main-banner {
+  width: 100%;
   background-color: rgb(56, 46, 44);
+  display: flex;
+  justify-content: space-around;
   padding: 10% 5%;
 }
-.main-banner-item {
+.main-banner .swiper {
   width: 100%;
+}
+.main-banner .swiper-slide {
+  width: 50% !important;
+  margin-right: 20%;
+}
+.main-banner .swiper-slide img {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-banner-item {
   position: relative;
   overflow-x: visible;
   opacity: 0.7;
   transition: all 0.5s;
-  margin: 0 5%;
 }
 .main-banner-item article {
-  padding: 5% 10%;
+  padding: 5% 5%;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow-x: visible;
   top: 10%;
+  transition: all 0.3s;
 }
 .main-banner-item article h2 {
   color: white;
@@ -441,6 +456,9 @@ main {
 }
 .main-banner-item:hover {
   opacity: 1;
+}
+.main-banner-item:hover article {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .main-banner-item:hover h2 {
   opacity: 1;
@@ -516,10 +534,12 @@ footer .social li i {
 }
 .swiper-button-next {
   color: #555;
+  z-index: 100;
 }
 
 .swiper-button-prev {
   color: #555;
+  z-index: 100;
 }
 
 .swiper-pagination-fraction {
@@ -538,6 +558,11 @@ footer .social li i {
 
 .swiper {
   z-index: 0;
+}
+
+.swiper-slide a {
+  width: 100%;
+  display: block;
 }
 
 .topBtn {
@@ -576,7 +601,7 @@ footer .social li i {
 }
 .sub-wrap p {
   padding: 20px 10%;
-  font-size: 2vw;
+  font-size: 14px;
   border-bottom: 1px solid #eee;
 }
 .sub-wrap .description {
@@ -610,19 +635,22 @@ footer .social li i {
   align-items: center;
 }
 .sortitems ul {
+  width: 70%;
   margin-bottom: 0;
   padding: 10px 0;
 }
 .sortitems ul li {
+  width: 20%;
+  height: 100%;
   display: inline-block;
-  padding: 0 40px;
   font-size: 18px;
   text-align: center;
-  margin: 0px 10px;
   cursor: pointer;
 }
 .sortitems ul li::after {
   content: "";
+  position: relative;
+  top: 10px;
   width: 0%;
   display: block;
   height: 4px;
@@ -630,10 +658,10 @@ footer .social li i {
   transition: all 0.5s;
 }
 .sortitems ul li:hover {
-  color: #EA094B;
+  color: #ea094b;
 }
 .sortitems ul li:hover::after {
-  background-color: #EA094B;
+  background-color: #ea094b;
   width: 100%;
 }
 
@@ -649,7 +677,7 @@ footer .social li i {
   top: 1rem;
   padding: 8px 16px;
   color: white;
-  background-color: #EA094B;
+  background-color: #ea094b;
   opacity: 0.5;
   transition: all 0.3s;
 }
@@ -657,6 +685,24 @@ footer .social li i {
   opacity: 0.8;
 }
 
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 1080px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 780px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sortitems ul li {
+    font-size: 14px;
+  }
+}
 .detail {
   width: 50%;
   display: flex;
@@ -665,6 +711,9 @@ footer .social li i {
   align-items: center;
   margin: 0 auto;
   padding: 5% 0;
+}
+.detail img {
+  width: 100%;
 }
 .detail article {
   text-align: center;
@@ -684,6 +733,16 @@ footer .social li i {
   opacity: 1;
 }
 
+@media screen and (max-width: 1080px) {
+  .detail {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .detail {
+    width: 90%;
+  }
+}
 .map_wrap {
   position: relative;
   height: 80vh;
@@ -764,34 +823,37 @@ footer .social li i {
 }
 
 @media screen and (max-width: 780px) {
+  .map_wrap {
+    flex-direction: column;
+  }
   .map_wrap #menu_wrap {
     width: 100%;
   }
 }
 .brand-history {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
+  margin: 80px auto;
 }
 .brand-history section {
   width: 100%;
+  margin-bottom: 50px;
 }
 .brand-history article {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 50px 0;
+  padding: 0 5%;
+  margin-bottom: 50px;
 }
 .brand-history article h1 {
-  margin-left: 100px;
   font-weight: bold;
 }
 .brand-history article p {
-  margin-left: 100px;
   margin-bottom: 50px;
 }
 .brand-history article img {
@@ -801,10 +863,10 @@ footer .social li i {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  margin-left: 100px;
   margin-top: 5px;
 }
 .brand-history ul li {
+  width: 20%;
   text-align: center;
   white-space: nowrap;
   padding-right: 5%;
@@ -829,23 +891,18 @@ footer .social li i {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 0 5%;
 }
 .brand-history .historylogo section {
   display: flex;
   justify-content: flex-start;
 }
 .brand-history .historylogo section img {
-  width: 50%;
   max-width: 200px;
   height: 100px;
-  margin-left: 100px;
-  margin-top: 50px;
 }
 .brand-history .historylogo section span {
   font-weight: bold;
-}
-.brand-history .historylogo section p {
-  margin-left: 70px;
 }
 .brand-history .historylogo section p h2 {
   font-weight: bold;
@@ -879,6 +936,9 @@ footer .social li i {
   grid-template-columns: repeat(2, 1fr);
   row-gap: 20%;
 }
+.brand-history .pattern-color img {
+  width: 100%;
+}
 .brand-history .pattern-color .color {
   margin-left: 10%;
 }
@@ -886,6 +946,24 @@ footer .social li i {
   font-weight: bold;
 }
 
+@media screen and (max-width: 1080px) {
+  .brand-history .pattern-color {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 0%;
+  }
+  .brand-history .pattern-color .color {
+    margin-left: 0%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .brand-history ul li {
+    font-size: 12px;
+  }
+  .brand-history article p {
+    margin-left: 30px;
+    font-size: 14px;
+  }
+}
 .principle-title {
   display: flex;
   flex-direction: column;
@@ -911,6 +989,11 @@ footer .social li i {
   display: flex;
 }
 
+@media screen and (max-width: 1080px) {
+  .principle-slide {
+    display: none;
+  }
+}
 .mobile {
   background-color: #fff;
   display: none;

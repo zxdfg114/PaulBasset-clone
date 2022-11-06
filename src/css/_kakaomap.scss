@@ -91,6 +91,10 @@
 }
 
 @media screen and (max-width: 780px) {
+  .map_wrap {
+    flex-direction: column;
+  }
+
   .map_wrap #menu_wrap {
     width: 100%;
   }

@@ -26,7 +26,7 @@ export default function Detail() {
         <div
           className="tolist"
           onClick={() => {
-            navigate(process.env.PUBLIC_URL + "/items");
+            navigate("/items");
           }}
         >
           LIST

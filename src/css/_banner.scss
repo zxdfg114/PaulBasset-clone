@@ -1,21 +1,38 @@
 .main-banner {
+  width: 100%;
   background-color: rgb(56, 46, 44);
+  display: flex;
+  justify-content: space-around;
   padding: 10% 5%;
 
-  &-item {
+  .swiper {
     width: 100%;
+  }
+
+  .swiper-slide {
+    width: 50% !important;
+    margin-right: 20%;
+  }
+
+  .swiper-slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-item {
     position: relative;
     overflow-x: visible;
     opacity: 0.7;
     transition: all 0.5s;
-    margin: 0 5%;
 
     article {
-      padding: 5% 10%;
+      padding: 5% 5%;
       background-color: rgba($color: #000000, $alpha: 0.3);
       position: absolute;
       overflow-x: visible;
       top: 10%;
+      transition: all 0.3s;
 
       h2 {
         color: white;
@@ -37,6 +54,10 @@
 
     &:hover {
       opacity: 1;
+
+      article {
+        background-color: rgba($color: #000000, $alpha: 0.7);
+      }
 
       h2 {
         opacity: 1;

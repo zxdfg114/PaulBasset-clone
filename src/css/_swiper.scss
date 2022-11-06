@@ -1,8 +1,10 @@
 .swiper-button-next {
   color: #555;
+  z-index: 100;
 }
 .swiper-button-prev {
   color: #555;
+  z-index: 100;
 }
 
 .swiper-pagination {
@@ -24,4 +26,11 @@
 
 .swiper {
   z-index: 0;
+}
+
+.swiper-slide {
+  a {
+    width: 100%;
+    display: block;
+  }
 }

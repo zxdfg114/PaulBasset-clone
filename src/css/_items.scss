@@ -7,19 +7,22 @@
   align-items: center;
 
   ul {
+    width: 70%;
     margin-bottom: 0;
-    padding : 10px 0;
-    
+    padding: 10px 0;
+
     li {
+      width: (100% / 5);
+      height: 100%;
       display: inline-block;
-      padding: 0 40px;
       font-size: 18px;
       text-align: center;
-      margin: 0px 10px;
       cursor: pointer;
 
       &::after {
-        content: '';
+        content: "";
+        position: relative;
+        top: 10px;
         width: 0%;
         display: block;
         height: 4px;
@@ -28,11 +31,11 @@
       }
 
       &:hover {
-        color : #EA094B;
+        color: #ea094b;
       }
-      
+
       &:hover::after {
-        background-color : #EA094B;
+        background-color: #ea094b;
         width: 100%;
       }
     }
@@ -52,11 +55,36 @@
   top: 1rem;
   padding: 8px 16px;
   color: white;
-  background-color: #EA094B;
+  background-color: #ea094b;
   opacity: 0.5;
   transition: all 0.3s;
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 1080px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .sortitems {
+    ul {
+      li {
+        font-size: 14px;
+      }
+    }
   }
 }
